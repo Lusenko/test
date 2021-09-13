@@ -1,5 +1,12 @@
 <form [formGroup]="formGroup">
   <label for="name">Enter name: </label>
-  <input type="text" id="name" formControlName="inputText">
+  <input #writeWord type="text" id="name" formControlName="inputText" (keyup.enter)="add(writeWord.value)">
 
+  <div class="block-with-items">
+    <div class="container" *ngFor="let deezer of search">
+      <div>{{deezer.title}}</div>
+      <div>{{deezer.artist.name}}</div>
+      <div>{{deezer.album.title}}</div>
+    </div>
+  </div>
 </form>

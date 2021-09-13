@@ -1,0 +1,8 @@
+.block-with-items{
+  display: flex;
+  flex-wrap: wrap;
+
+  .container{
+    border: 1px solid gray;
+  }
+}

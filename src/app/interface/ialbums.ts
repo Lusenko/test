@@ -4,12 +4,10 @@ export interface IAlbums {
 
     artist:{
       name: string,
-      link: string
     }
 
     album:{
       title: string,
-      cover_small: string
     }
   }[];
 }

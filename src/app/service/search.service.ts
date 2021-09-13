@@ -10,9 +10,7 @@ export class SearchService {
 
   constructor(private readonly httpClient: HttpClient) { }
 
-  http = 'https://api.deezer.com/search?q=radiohead';
-
-  getDeezer(): Observable<IAlbums>{
-    return this.httpClient.get<IAlbums>(this.http);
+  getDeezer(writeWord: string): Observable<IAlbums>{
+    return this.httpClient.get<IAlbums>(`api/search/?q=artist:${writeWord}`);
   }
 }

@@ -23,4 +23,13 @@ export class AlbumsComponent implements OnInit {
 
   }
 
+  add(writeWord: string){
+    this.httpService.getDeezer(writeWord)
+        .pipe(
+            tap(item => {
+              this.search = item.data
+            })
+        ).subscribe()
+  }
+
 }
