@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from "../service/search.service";
-import {IAlbums} from "../interface/ialbums";
+import {IalbumsDeezer} from "../interface/ialbums-deezer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {tap} from "rxjs/operators";
 
@@ -17,7 +17,7 @@ export class AlbumsComponent implements OnInit {
     })
   }
   formGroup: FormGroup;
-  search!: IAlbums['data'];
+  search!: IalbumsDeezer['data'];
 
   ngOnInit(): void {
 
