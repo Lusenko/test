@@ -1,8 +1,49 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+img{
+  width: 130px;
+  border-radius: 8px;
+}
+label{
+  font-size: 20px;
+  color: #343434;
+}
+.input-name{
+  width: 200px;
+  height: 25px;
+
+  border-radius: 8px;
+  border: none;
+  box-shadow: 0 0 3px grey;
+}
 .block-with-items{
   display: flex;
   flex-wrap: wrap;
 
   .container{
+    display: flex;
+
+    width: 260px;
+    height: 180px;
+
     border: 1px solid gray;
+    border-radius: 8px;
+    box-shadow: 0 0 2px grey;
+
+    margin: .5em;
+
+    .album-img{
+      margin: .5em;
+    }
+    .info-about-artist{
+
+      h4{
+        padding: .3em 0;
+      }
+    }
   }
 }

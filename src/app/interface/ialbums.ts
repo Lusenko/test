@@ -8,6 +8,7 @@ export interface IAlbums {
 
     album:{
       title: string,
+      cover_medium: string
     }
   }[];
 }
