@@ -1,7 +1,5 @@
 export interface IAlbumsITunes {
-  result:{
-    name: string,
+    artistName: string,
     trackName: string,
-    trackUrl: string,
-  }[];
+    artworkUrl100: string,
 }

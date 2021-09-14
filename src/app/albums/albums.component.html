@@ -1,9 +1,9 @@
 <form [formGroup]="formGroup">
   <label for="input-name">Enter name: </label>
   <input #writeWord type="text" id="input-name" class="input-name" formControlName="inputText" (keyup.enter)="add(writeWord.value)">
-
-  <div class="block-with-items">
-    <div class="container" *ngFor="let deezer of search">
+  <h1>Deezer</h1>
+  <div class="block-with-items-deezer">
+    <div class="container" *ngFor="let deezer of searchDeezer">
       <div class="album-img">
         <img src="{{deezer.album.cover_medium}}" alt="">
       </div>
@@ -14,6 +14,20 @@
         <div>{{deezer.album.title}}</div>
         <h4>Track</h4>
         <div>{{deezer.title}}</div>
+      </div>
+    </div>
+  </div>
+  <h1>ITunes</h1>
+  <div class="block-with-items-itunes">
+    <div class="container" *ngFor="let itunes of iTunes">
+      <div class="album-img">
+        <img src="{{itunes.artworkUrl100}}" alt="">
+      </div>
+      <div class="info-about-artist">
+        <h4>Artist name</h4>
+        <div>{{itunes.artistName}}</div>
+        <h4>Track</h4>
+        <div>{{itunes.trackName}}</div>
       </div>
     </div>
   </div>

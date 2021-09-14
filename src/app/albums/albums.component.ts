@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {SearchService} from "../service/search.service";
-import {IalbumsDeezer} from "../interface/ialbums-deezer";
+import {IAlbumsDeezer} from "../interface/ialbums-deezer";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {tap} from "rxjs/operators";
+import {IAlbumsITunes} from "../interface/ialbums-itunes";
+import {forkJoin} from "rxjs";
+import {ITunes} from "../interface/itunes";
+
 
 @Component({
   selector: 'app-albums',
@@ -17,19 +21,22 @@ export class AlbumsComponent implements OnInit {
     })
   }
   formGroup: FormGroup;
-  search!: IalbumsDeezer['data'];
+  searchDeezer: IAlbumsDeezer['data'] = [];
+  iTunes: ITunes['results'] = [];
 
   ngOnInit(): void {
 
   }
 
   add(writeWord: string){
-    this.httpService.getDeezer(writeWord)
-        .pipe(
-            tap(item => {
-              this.search = item.data
-            })
-        ).subscribe()
-  }
+    const queryDeezer$ = this.httpService.getDeezer(writeWord);
+    const queryITunes$ = this.httpService.getITunes(writeWord);
 
+    forkJoin([queryDeezer$,queryITunes$]).subscribe(([deezer, itunes]) =>{
+      this.iTunes = itunes.results;
+      console.log(itunes.results);
+      this.searchDeezer = deezer.data
+      console.log(deezer.data);
+    })
+  }
 }
