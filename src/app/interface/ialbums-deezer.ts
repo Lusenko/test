@@ -7,6 +7,7 @@ export interface IAlbumsDeezer {
     }
 
     album:{
+      id: number,
       title: string,
       cover_medium: string
     }

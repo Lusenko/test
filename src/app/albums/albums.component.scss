@@ -1,3 +1,6 @@
+$mainColor: #fffbf4;
+$boxShadowColor: #8a8a89;
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -24,7 +27,7 @@ label{
 
   border-radius: 8px;
   border: none;
-  box-shadow: 0 0 3px grey;
+  box-shadow: 0 0 3px $boxShadowColor;
 }
 .block-with-items-deezer{
   display: flex;
@@ -34,19 +37,32 @@ label{
     display: flex;
 
     width: 284px;
-    height: 180px;
+    height: 185px;
 
     border: 1px solid gray;
     border-radius: 8px;
-    box-shadow: 0 0 8px #8a8a89;
+    box-shadow: 0 0 8px $boxShadowColor;
 
-    background: #fffbf4;
+    background: $mainColor;
 
     margin: .5em;
 
     .album-img{
+      width: 140px;
       margin: .5em;
+
+      .info-deezer-button{
+        padding: .2em;
+        margin: .3em 0;
+
+        border-radius: 8px;
+        border: none;
+        box-shadow: 0 0 3px;
+
+        background: $mainColor;
+      }
     }
+
     .info-about-artist{
 
       h4{
@@ -67,9 +83,9 @@ label{
 
     border: 1px solid grey;
     border-radius: 20px;
-    box-shadow: 0 0 8px #8a8a89;
+    box-shadow: 0 0 8px $boxShadowColor;
 
-    background: #fffbf4;
+    background: $mainColor;
 
     width: 150px;
     height: 250px;

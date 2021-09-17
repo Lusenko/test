@@ -14,9 +14,8 @@ export class SearchService {
 
 
   getDeezer(writeWord: string): Observable<IAlbumsDeezer>{
-    writeWord = writeWord.trim();
 
-    const apiSearch = `https://api.deezer.com/search?q=artist:'${writeWord}'&output=jsonp`;
+    const apiSearch = `https://api.deezer.com/search?q=artist:'${writeWord.trim()}'&output=jsonp`;
 
     return this.httpClient.jsonp<IAlbumsDeezer>(apiSearch, 'callback');
   }

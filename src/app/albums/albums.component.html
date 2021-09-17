@@ -7,6 +7,7 @@
     <div class="container" *ngFor="let deezer of searchDeezer">
       <div class="album-img">
         <img src="{{deezer.album.cover_medium}}" alt="">
+        <button class="info-deezer-button" routerLink="/albumInfo/{{deezer.album.id}}">Show more info</button>
       </div>
       <div class="info-about-artist">
         <h4>Artist name</h4>
@@ -15,6 +16,8 @@
         <div>{{deezer.album.title}}</div>
         <h4>Track</h4>
         <div>{{deezer.title}}</div>
+        <p>idAl</p>
+        <div>{{deezer.album.id}}</div>
       </div>
     </div>
   </div>
@@ -33,3 +36,5 @@
     </div>
   </div>
 </form>
+
+

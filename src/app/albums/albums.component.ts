@@ -16,6 +16,7 @@ export class AlbumsComponent implements OnInit, OnDestroy {
   constructor(private httpService: SearchService, formBuilder: FormBuilder) {
 
     this.formGroup = formBuilder.group({
+      id: [''],
       inputText: ['']
     })
   }

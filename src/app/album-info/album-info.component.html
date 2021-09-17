@@ -1,0 +1,20 @@
+<form [formGroup]="formGroup">
+  <div class="show-info-about-album">
+    <div class="container">
+      <div class="block-with-img">
+        <img src="{{deezerInfo?.cover_big}}" alt="">
+      </div>
+      <div class="block-with-item">
+        <h3 *ngIf="showTitle">Album</h3>
+        <div>{{deezerInfo?.title}}</div>
+        <h3 *ngIf="showTitle">Label</h3>
+        <div>{{deezerInfo?.label}}</div>
+        <h3 *ngIf="showTitle">Release date</h3>
+        <div>{{deezerInfo?.release_date}}</div>
+      </div>
+    </div>
+    <div *ngFor="let title of deezerInfoTitle">
+      <div class="block-with-music">- {{title.title}}</div>
+    </div>
+  </div>
+</form>
